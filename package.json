@@ -1,0 +1,29 @@
+{
+  "name": "urlregex",
+  "version": "0.1.0",
+  "description": "URL validation for Node and the browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "keywords": [
+    "url",
+    "regex"
+  ],
+  "author": "Nicolas Escalante <nlante@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tap": "^10.7.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nescalante/urlregex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nescalante/urlregex/issues"
+  },
+  "homepage": "https://github.com/nescalante/urlregex#readme"
+}
