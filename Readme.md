@@ -1,5 +1,7 @@
 # urlregex
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/nescalante/urlregex.svg)](https://greenkeeper.io/)
+
 No-dependency URL validation for Node and the browser.
 
 ## Install
