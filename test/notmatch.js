@@ -18,7 +18,6 @@ const fixtures = [
   '///a',
   '///',
   'http:///a',
-  'foo.com',
   'rdar://1234',
   'h://test',
   'http:// shouldfail.com',
