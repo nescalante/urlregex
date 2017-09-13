@@ -1,6 +1,7 @@
 'use strict';
 
-module.exports = function () {
+module.exports = function (opts) {
+  var exact = (opts && opts.exact !== undefined) ? opts.exact : true;
   var ip = '(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])(?:\\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])){3}';
   var protocol = '(?:http(s?)\:\/\/)?';
   var auth = '(?:\\S+(?::\\S*)?@)?';
@@ -11,5 +12,5 @@ module.exports = function () {
   var path = '(?:[/?#][^\\s"]*)?';
   var regex = '(?:' + protocol + '|www\\.)' + auth + '(?:localhost|' + ip + '|' + host + domain + tld + ')' + port + path;
 
-  return new RegExp('(?:^' + regex + '$)', 'i');
+  return exact ? new RegExp('(?:^' + regex + '$)', 'i') : new RegExp(regex, 'ig');
 };

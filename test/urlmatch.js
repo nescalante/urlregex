@@ -1,7 +1,7 @@
 const tap = require('tap');
 const regex = require('../index.js');
 
-const fixtures = [
+const exactFixtures = [
   'http://foo.com/blah_blah',
   'http://foo.com/blah_blah/',
   'http://foo.com/blah_blah_(wikipedia)',
@@ -58,9 +58,19 @@ const fixtures = [
   'http://userid:password@example.com',
   'http://➡.ws/䨹',
   'www.google.com/unicorn',
-  'http://example.com.'
+  'http://example.com.',
 ];
 
-for (const x of fixtures) {
+const notExactFuxtures = [
+  'Some text http://example.com some other text',
+  'Some text \'http://1337.net\' some other text',
+  'Some text "http://foo.com/blah_blah/". some other text',
+]
+
+for (const x of exactFixtures) {
   tap.ok(regex().test(x), x);
+}
+
+for (const str of notExactFuxtures) {
+  tap.ok(regex({exact: false}).test(str), str);
 }
