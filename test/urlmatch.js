@@ -3,6 +3,7 @@ const regex = require('../index.js');
 
 const exactFixtures = [
   'http://foo.com/blah_blah',
+  'http://foo/blah_blah',
   'http://foo.com/blah_blah/',
   'http://foo.com/blah_blah_(wikipedia)',
   'http://foo.com/blah_blah_(wikipedia)_(again)',
