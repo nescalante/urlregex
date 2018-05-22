@@ -3,7 +3,6 @@ const regex = require('../index.js');
 
 const exactFixtures = [
   'http://foo.com/blah_blah',
-  'http://foo/blah_blah',
   'http://foo.com/blah_blah/',
   'http://foo.com/blah_blah_(wikipedia)',
   'http://foo.com/blah_blah_(wikipedia)_(again)',
@@ -62,16 +61,25 @@ const exactFixtures = [
   'http://example.com.',
 ];
 
-const notExactFuxtures = [
+const notExactFixtures = [
   'Some text http://example.com some other text',
   'Some text \'http://1337.net\' some other text',
   'Some text "http://foo.com/blah_blah/". some other text',
-]
+];
+
+const noTldValidationFixtures = [
+  'http://foo/blah_blah',
+  'https://dc1esbprd01:5042/en/mdm-profitcenterorg-system-api/api/*',
+];
 
 for (const x of exactFixtures) {
   tap.ok(regex().test(x), x);
 }
 
-for (const str of notExactFuxtures) {
-  tap.ok(regex({exact: false}).test(str), str);
+for (const x of notExactFixtures) {
+  tap.ok(regex({exact: false}).test(x), x);
+}
+
+for (const x of noTldValidationFixtures) {
+  tap.ok(regex({tld: false}).test(x), x);
 }
