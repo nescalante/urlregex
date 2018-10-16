@@ -16,6 +16,7 @@ const exactFixtures = [
   'http://localhost/',
   'http://userid:password@example.com:8080',
   'http://userid:password@example.com:8080/',
+  'https://simplecloudwebservice_1_0_6.apps1-fm-int.icloud.intel.com',
   'http://userid@example.com',
   'http://userid@example.com/',
   'http://userid@example.com:8080',
