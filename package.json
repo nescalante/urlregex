@@ -13,7 +13,7 @@
   "author": "Nicolas Escalante <nlante@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "tap": "^12.1.0"
+    "tap": "^14.3.0"
   },
   "directories": {
     "test": "test"
