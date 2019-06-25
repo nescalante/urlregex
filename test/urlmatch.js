@@ -73,6 +73,11 @@ const noTldValidationFixtures = [
   'https://dc1esbprd01:5042/en/mdm-profitcenterorg-system-api/api/*',
 ];
 
+const webSocketsFixtures = [
+  'ws://example.com',
+  'wss://example.com',
+];
+
 for (const x of exactFixtures) {
   tap.ok(regex().test(x), x);
 }
@@ -83,4 +88,8 @@ for (const x of notExactFixtures) {
 
 for (const x of noTldValidationFixtures) {
   tap.ok(regex({tld: false}).test(x), x);
+}
+
+for (const x of webSocketsFixtures) {
+  tap.ok(regex({allowWebSockets: true}).test(x), x);
 }
