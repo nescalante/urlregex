@@ -60,8 +60,8 @@ const exactFixtures = [
   'http://➡.ws/䨹',
   'www.google.com/unicorn',
   'http://example.com.',
-  'ws://example.com.',
-  'wss://example.com.',
+  'ws://example.com',
+  'wss://example.com',
 ];
 
 const notExactFixtures = [
