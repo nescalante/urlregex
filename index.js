@@ -3,8 +3,9 @@
 module.exports = function (opts) {
   var exact = (opts && opts.exact !== undefined) ? opts.exact : true;
   var tldvalidation = (opts && opts.tld !== undefined) ? opts.tld : true;
+  var allowWebSockets = (opts && opts.allowWebSockets !== undefined) ? opts.allowWebSockets : false;
   var ip = '(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])(?:\\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])){3}';
-  var protocol = '(?:(http|ws)(s?)\:\/\/)?';
+  var protocol = allowWebSockets ? '(?:(http|ws)(s?)\:\/\/)?' : '(?:http(s?)\:\/\/)?';
   var auth = '(?:\\S+(?::\\S*)?@)?';
   var host = '(?:(?:[a-z\\u00a1-\\uffff0-9_]-*)*[a-z\\u00a1-\\uffff0-9]+)';
   var domain = '(?:\\.(?:[a-z\\u00a1-\\uffff0-9]-*)*[a-z\\u00a1-\\uffff0-9]+)*';
