@@ -7,10 +7,10 @@ module.exports = function (opts) {
   var allowWebSockets = (opts && opts.allowWebSockets !== undefined) ? opts.allowWebSockets : false;
   var ip = '(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])(?:\\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])){3}';
   var protocol = allowWebSockets ? '(?:(http|ws)(s?)\:\/\/)?' : '(?:http(s?)\:\/\/)?';
-  var auth = '(?:(?:[A-Za-z\\u00a1-\\uffff0-9][-_]*:?)+@)?';
-  var host = '(?:(?:[A-Za-z\\u00a1-\\uffff0-9][-_]*)?[A-Za-z\\u00a1-\\uffff0-9]+[_]*)';
-  var domain = '(?:\\.(?:[\\u00a1-\\uffffA-Za-z0-9][-_]*)?[\\u00a1-\\uffffA-Za-z0-9]+[_]*)*';
-  var tld = tldvalidation ? '(?:\\.(?:[A-Za-z\\u00a1-\\uffff]{2,}))\\.?' : '';
+  var auth = '(?:(?:[a-z0-9\\u00a1-\\uffff][-_]*:?)+@)?';
+  var host = '(?:(?:[a-z0-9\\u00a1-\\uffff][-_]*)?[a-z0-9\\u00a1-\\uffff]+[_]*)';
+  var domain = '(?:\\.(?:[a-z0-9\\u00a1-\\uffff][-_]*)?[a-z0-9\\u00a1-\\uffff]+[_]*)*';
+  var tld = tldvalidation ? '(?:\\.(?:[a-z\\u00a1-\\uffff]{2,}))\\.?' : '';
   var port = '(?::\\d{2,5})?';
   var path = '(?:([\\/?#]|xn--)[^\\s"]*)?';
   var puny = punyCodeValidation ? '(?:^(?=.{1,64}$).*)' : '';
