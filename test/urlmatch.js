@@ -11,7 +11,6 @@ const exactFixtures = [
   'http://a.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.w.x.y.z.com',
   'http://mw1.google.com/mw-earth-vectordb/kml-samples/gp/seattle/gigapxl/$[level]/r$[y]_c$[x].jpg',
   'http://user:pass@example.com:123/one/two.three?q1=a1&q2=a2#body',
-  'http://www.microsoft.xn--comindex-g03d.html.irongeek.com',
   'http://✪df.ws/123',
   'http://localhost/',
   'http://userid:password@example.com:8080',
@@ -78,6 +77,14 @@ const webSocketsFixtures = [
   'wss://example.com',
 ];
 
+const punyCodeFixtures = [
+  'http://www.microsoft.xn--comindex-g03d.html.irongeek.com',
+  'www.microsoft.xn--comindex-g03d.html.irongeek.com',
+  'http://xn--addas-o4a.de/',
+  'xn--aerlngus-j80d.com',
+  'xn--sngaporeair-zzb.com'
+];
+
 for (const x of exactFixtures) {
   tap.ok(regex().test(x), x);
 }
@@ -92,4 +99,8 @@ for (const x of noTldValidationFixtures) {
 
 for (const x of webSocketsFixtures) {
   tap.ok(regex({allowWebSockets: true}).test(x), x);
+}
+
+for (const x of punyCodeFixtures) {
+  tap.ok(regex({exact: false, puny: true}).test(x), x)
 }
