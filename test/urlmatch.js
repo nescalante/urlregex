@@ -59,6 +59,11 @@ const exactFixtures = [
   'http://➡.ws/䨹',
   'www.google.com/unicorn',
   'http://example.com.',
+  'http://www.microsoft.xn--comindex-g03d.html.irongeek.com',
+  'www.microsoft.xn--comindex-g03d.html.irongeek.com',
+  'http://xn--addas-o4a.de/',
+  'xn--aerlngus-j80d.com',
+  'xn--sngaporeair-zzb.com'
 ];
 
 const notExactFixtures = [
@@ -77,14 +82,6 @@ const webSocketsFixtures = [
   'wss://example.com',
 ];
 
-const punyCodeFixtures = [
-  'http://www.microsoft.xn--comindex-g03d.html.irongeek.com',
-  'www.microsoft.xn--comindex-g03d.html.irongeek.com',
-  'http://xn--addas-o4a.de/',
-  'xn--aerlngus-j80d.com',
-  'xn--sngaporeair-zzb.com'
-];
-
 for (const x of exactFixtures) {
   tap.ok(regex().test(x), x);
 }
@@ -99,8 +96,4 @@ for (const x of noTldValidationFixtures) {
 
 for (const x of webSocketsFixtures) {
   tap.ok(regex({allowWebSockets: true}).test(x), x);
-}
-
-for (const x of punyCodeFixtures) {
-  tap.ok(regex({exact: false, puny: true}).test(x), x)
 }
