@@ -1,4 +1,6 @@
 'use strict';
+const RE2 = require("re2");
+
 
 module.exports = function (opts) {
   var exact = (opts && opts.exact !== undefined) ? opts.exact : true;
@@ -16,5 +18,5 @@ module.exports = function (opts) {
   var puny = punyCodeValidation ? '(?:^(?=.{1,64}$).*)' : '';
   var regex = puny + '(?:' + protocol + '|www\\.)' + auth + '(?:localhost|' + ip + '|' + host + domain + tld + ')' + port + path;
 
-  return exact ? new RegExp('(?:^' + regex + '$)', 'i') : new RegExp(regex, 'ig');
+  return exact ? new RE2('(?:^' + regex + '$)', 'i') : new RE2(regex, 'ig');
 };
