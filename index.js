@@ -1,4 +1,6 @@
 'use strict';
+const RE2 = require("re2");
+
 
 module.exports = function (opts) {
   var exact = (opts && opts.exact !== undefined) ? opts.exact : true;
@@ -14,5 +16,5 @@ module.exports = function (opts) {
   var path = '(?:[/?#][^\\s"]*)?';
   var regex = '(?:' + protocol + '|www\\.)' + auth + '(?:localhost|' + ip + '|' + host + domain + tld + ')' + port + path;
 
-  return exact ? new RegExp('(?:^' + regex + '$)', 'i') : new RegExp(regex, 'ig');
+  return exact ? new RE2('(?:^' + regex + '$)', 'i') : new RE2(regex, 'ig');
 };
