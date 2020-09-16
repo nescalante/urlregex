@@ -2,7 +2,8 @@
   "name": "urlregex",
   "version": "0.5.0",
   "description": "URL validation for Node and the browser",
-  "main": "index.js",
+  "main": "server.js",
+  "browser": "browser.js",
   "scripts": {
     "test": "tap test/*.js"
   },
@@ -25,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/nescalante/urlregex/issues"
   },
-  "homepage": "https://github.com/nescalante/urlregex#readme"
+  "homepage": "https://github.com/nescalante/urlregex#readme",
+  "dependencies": {
+    "re2": "^1.15.4"
+  }
 }

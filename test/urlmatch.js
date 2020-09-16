@@ -1,5 +1,5 @@
 const tap = require('tap');
-const regex = require('../index.js');
+const regex = require('../server.js');
 
 const exactFixtures = [
   'http://foo.com/blah_blah',
@@ -39,7 +39,7 @@ const exactFixtures = [
   'http://مثال.إختبار',
   'http://例子.测试',
   'http://उदाहरण.परीक्षा',
-  'http://-.~_!$&\'()*+\';=:%40:80%2f::::::@example.com',
+  "http://-.~_!$&'()*+';=:%40:80%2f::::::@example.com",
   'http://1337.net',
   'http://a.b-c.de',
   'http://223.255.255.254',
@@ -63,12 +63,12 @@ const exactFixtures = [
   'www.microsoft.xn--comindex-g03d.html.irongeek.com',
   'http://xn--addas-o4a.de/',
   'xn--aerlngus-j80d.com',
-  'xn--sngaporeair-zzb.com'
+  'xn--sngaporeair-zzb.com',
 ];
 
 const notExactFixtures = [
   'Some text http://example.com some other text',
-  'Some text \'http://1337.net\' some other text',
+  "Some text 'http://1337.net' some other text",
   'Some text "http://foo.com/blah_blah/". some other text',
 ];
 
@@ -77,23 +77,20 @@ const noTldValidationFixtures = [
   'https://dc1esbprd01:5042/en/mdm-profitcenterorg-system-api/api/*',
 ];
 
-const webSocketsFixtures = [
-  'ws://example.com',
-  'wss://example.com',
-];
+const webSocketsFixtures = ['ws://example.com', 'wss://example.com'];
 
 for (const x of exactFixtures) {
   tap.ok(regex().test(x), x);
 }
 
 for (const x of notExactFixtures) {
-  tap.ok(regex({exact: false}).test(x), x);
+  tap.ok(regex({ exact: false }).test(x), x);
 }
 
 for (const x of noTldValidationFixtures) {
-  tap.ok(regex({tld: false}).test(x), x);
+  tap.ok(regex({ tld: false }).test(x), x);
 }
 
 for (const x of webSocketsFixtures) {
-  tap.ok(regex({allowWebSockets: true}).test(x), x);
+  tap.ok(regex({ allowWebSockets: true }).test(x), x);
 }
