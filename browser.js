@@ -1,5 +1,5 @@
 'use strict';
 
-const urlRegex = require('./main.js');
+var urlRegex = require('./main.js');
 
 module.exports = urlRegex(RegExp);
