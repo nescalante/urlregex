@@ -1,6 +1,6 @@
 {
   "name": "urlregex",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "URL validation for Node and the browser",
   "main": "server.js",
   "browser": "browser.js",
