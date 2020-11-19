@@ -46,6 +46,7 @@ const defaultOptsFixture = [
 
 const allowedProtocolsFixture = [
   'httpsss://carlitos.tevez',
+  'http://carlitos.tevez',
   'amp://elsultan.volvio.aladrar',
   'miau://haha.com',
   '://jaja.com'

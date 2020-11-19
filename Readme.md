@@ -16,6 +16,9 @@ npm install urlregex
 const urlRegex = require('urlregex');
 const isValid = urlRegex().test('http://github.com');
 ```
+### `allowedProtocols` option
+
+You can provide the `allowedProtocols` option to specify which protocols are allowed in the URL. It can either be an array of strings or the `'*'` wildcard to allow any protocol.
 
 ## Credits
 
