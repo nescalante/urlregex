@@ -1,7 +1,7 @@
 const tap = require('tap');
 const regex = require('../server.js');
 
-const fixtures = [
+const defaultOptsFixture = [
   'http://',
   'http://.',
   'http://..',
@@ -44,6 +44,21 @@ const fixtures = [
   'http://www.example.xn--overly-long-punycode-test-string-test-tests-123-test-test123/',
 ];
 
-for (const x of fixtures) {
+const allowedProtocolsFixture = [
+  'httpsss://carlitos.tevez',
+  'amp://elsultan.volvio.aladrar',
+  'miau://haha.com',
+  '://jaja.com'
+];
+
+for (const x of defaultOptsFixture) {
   tap.equal(regex().test(x), false, x);
+}
+
+for (const x of allowedProtocolsFixture) {
+  tap.equal(
+    regex({ allowedProtocols: ['https', 'amqp', 'guau'] }).test(x),
+    false,
+    x
+  );
 }

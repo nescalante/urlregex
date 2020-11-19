@@ -6,11 +6,16 @@ module.exports = function (RE) {
     var tldvalidation = opts && opts.tld !== undefined ? opts.tld : true;
     var allowWebSockets =
       opts && opts.allowWebSockets !== undefined ? opts.allowWebSockets : false;
+    var allowedProtocols =
+      opts && opts.allowedProtocols !== undefined ? opts.allowedProtocols : ['http', 'https'];
+
+    if (allowedProtocols  !== '*' && allowWebSockets) {
+      allowedProtocols = allowedProtocols.concat('ws', 'wss');
+    }
+
     var ip =
       '(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])(?:\\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])){3}';
-    var protocol = allowWebSockets
-      ? '(?:(http|ws)(s?)://)?'
-      : '(?:http(s?)://)?';
+    var protocol = allowedProtocols === '*' ? '(?:(?:[a-z]+:)?//)?' : '(?:('+ allowedProtocols.join('|') +')://)?';
     var auth = '(?:\\S+(?::\\S*)?@)?';
     var host = '(?:(?:[a-z\\u00a1-\\uffff0-9_]-*)*[a-z\\u00a1-\\uffff0-9]+)';
     var domain =

@@ -79,6 +79,11 @@ const noTldValidationFixtures = [
 
 const webSocketsFixtures = ['ws://example.com', 'wss://example.com'];
 
+const allowedProtocolFixtures = ['https://something.com', 'amqp://cacho.com', 'about://posta.com', 'ipn://asi.si']
+const allowedProtocolWithWebSocketFlagFixtures = ['https://something.com', 'amqp://cacho.com', 'wss://websocke.com', 'ws://professsssiona.com'];
+const allowedProtocolWithTldFalseFixtures = ['https://something', 'amqp://cacho', 'loquede://a100meduermo']
+const anyProtocolFixtures = ['https://something.com', 'amqp://asd.com', 'newprotocolintheworld://hi.com', 'yes.com'];
+
 for (const x of exactFixtures) {
   tap.ok(regex().test(x), x);
 }
@@ -93,4 +98,24 @@ for (const x of noTldValidationFixtures) {
 
 for (const x of webSocketsFixtures) {
   tap.ok(regex({ allowWebSockets: true }).test(x), x);
+}
+
+for (const x of allowedProtocolFixtures) {
+  tap.ok(regex({ allowedProtocols: ['https', 'amqp', 'about', 'ipn'] }).test(x), x)
+}
+
+for (const x of allowedProtocolWithWebSocketFlagFixtures) {
+  tap.ok(regex({ allowedProtocols: ['https', 'amqp'], allowWebSockets: true }).test(x), x)
+}
+
+for (const x of allowedProtocolWithWebSocketFlagFixtures) {
+  tap.ok(regex({ allowedProtocols: ['https', 'amqp'], allowWebSockets: true }).test(x), x)
+}
+
+for (const x of allowedProtocolWithTldFalseFixtures) {
+  tap.ok(regex({ allowedProtocols: ['https', 'amqp', 'loquede'], tld: false }).test(x), x)
+}
+
+for (const x of anyProtocolFixtures) {
+  tap.ok(regex({ allowedProtocols: '*' }).test(x), x)
 }
