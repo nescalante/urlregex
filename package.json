@@ -14,7 +14,7 @@
   "author": "Nicolas Escalante <nlante@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "tap": "^14.3.0"
+    "tap": "^14.11.0"
   },
   "directories": {
     "test": "test"
@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/nescalante/urlregex#readme",
   "dependencies": {
-    "re2": "^1.15.4"
+    "re2": "^1.17.4"
   }
 }
