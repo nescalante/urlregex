@@ -58,6 +58,8 @@ const exactFixtures = [
   'http://userid:password@example.com',
   'http://➡.ws/䨹',
   'www.google.com/unicorn',
+  'https://dev_env.foo.bar',
+  'https://dev.env_foo.bar',
   'http://example.com.',
   'http://www.microsoft.xn--comindex-g03d.html.irongeek.com',
   'www.microsoft.xn--comindex-g03d.html.irongeek.com',
