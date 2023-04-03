@@ -19,7 +19,7 @@ module.exports = function (RE) {
     var auth = '(?:\\S+(?::\\S*)?@)?';
     var host = '(?:(?:[a-z\\u00a1-\\uffff0-9][-_]*)*[a-z\\u00a1-\\uffff0-9]+)';
     var domain =
-      '(?:\\.(?:[a-z\\u00a1-\\uffff0-9][-_]*)*[a-z\\u00a1-\\uffff0-9]+)*';
+      '(?:\\.(?:[a-z\\u00a1-\\uffff0-9][-_]*)*[a-z\\u00a1-\\uffff0-9_]+)*';
     var tld = tldvalidation ? '(?:\\.(?:[a-z\\u00a1-\\uffff]{2,}))\\.?' : '';
     var port = '(?::\\d{2,5})?';
     var path = '(?:[/?#][^\\s"]*)?';

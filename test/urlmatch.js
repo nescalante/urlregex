@@ -60,6 +60,8 @@ const exactFixtures = [
   'www.google.com/unicorn',
   'https://dev_env.foo.bar',
   'https://dev.env_foo.bar',
+  'https://dev.envfoo_.bar',
+  'https://dev._envfoo.bar',
   'http://example.com.',
   'http://www.microsoft.xn--comindex-g03d.html.irongeek.com',
   'www.microsoft.xn--comindex-g03d.html.irongeek.com',

@@ -33,8 +33,6 @@ const defaultOptsFixture = [
   'http://go/ogle.com',
   'https://_dev.envfoo',
   'https://dev.envfoo_',
-  'https://dev.envfoo_.bar',
-  'https://dev._envfoo.bar',
   'https://dev.envfoo.bar_',
   'http://foo.bar/ /',
   'http://google\\.com',

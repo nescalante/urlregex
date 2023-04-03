@@ -1,11 +1,12 @@
 {
   "name": "urlregex",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "URL validation for Node and the browser",
   "main": "server.js",
   "browser": "browser.js",
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tap test/*.js",
+    "tdd": "tap -w --no-coverage-report test/*.js"
   },
   "keywords": [
     "url",
