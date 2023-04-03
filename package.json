@@ -6,7 +6,8 @@
   "browser": "browser.js",
   "scripts": {
     "test": "tap test/*.js",
-    "tdd": "tap -w --no-coverage-report test/*.js"
+    "tdd": "tap -w --no-coverage-report test/*.js",
+    "postversion": "git push && git push --tags && npm publish"
   },
   "keywords": [
     "url",
