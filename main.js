@@ -17,7 +17,7 @@ module.exports = function (RE) {
       '(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])(?:\\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])){3}';
     var protocol = allowedProtocols === '*' ? '(?:(?:[a-z]+:)?//)?' : '(?:('+ allowedProtocols.join('|') +')://)?';
     var auth = '(?:\\S+(?::\\S*)?@)?';
-    var host = '(?:(?:[a-z\\u00a1-\\uffff0-9][-_]*)*[a-z\\u00a1-\\uffff0-9]+)';
+    var host = '(?:(?:[a-z\\u00a1-\\uffff0-9][-_]*)*[a-z\\u00a1-\\uffff0-9_]+)';
     var domain =
       '(?:\\.(?:[a-z\\u00a1-\\uffff0-9][-_]*)*[a-z\\u00a1-\\uffff0-9_]+)*';
     var tld = tldvalidation ? '(?:\\.(?:[a-z\\u00a1-\\uffff]{2,}))\\.?' : '';
