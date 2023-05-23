@@ -19,7 +19,7 @@
     "tap": "^16.3.4"
   },
   "engines": {
-    "node": ">=12, <=20"
+    "node": ">=12 <=20"
   },
   "directories": {
     "test": "test"
