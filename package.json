@@ -33,6 +33,6 @@
   },
   "homepage": "https://github.com/nescalante/urlregex#readme",
   "dependencies": {
-    "re2": "^1.18.0"
+    "re2": "^1.19.0"
   }
 }
