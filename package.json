@@ -19,8 +19,8 @@
     "tap": "^16.3.4"
   },
   "engines": {
-    "node": "^16.13.2",
-    "npm": "^8.1.2"
+    "node": ">=16.13.2",
+    "npm": ">=8.1.2"
   },
   "directories": {
     "test": "test"
