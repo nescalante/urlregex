@@ -1,6 +1,6 @@
 {
   "name": "urlregex",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "description": "URL validation for Node and the browser",
   "main": "server.js",
   "browser": "browser.js",
@@ -34,6 +34,6 @@
   },
   "homepage": "https://github.com/nescalante/urlregex#readme",
   "dependencies": {
-    "re2": "^1.17.4"
+    "re2": "^1.20.1"
   }
 }
